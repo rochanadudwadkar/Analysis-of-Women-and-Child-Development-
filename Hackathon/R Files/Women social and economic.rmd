@@ -1,0 +1,207 @@
+---
+title: "Women Social and economic"
+author: "Rochana Dudwadkar"
+date: "8/22/2021"
+output: html_document
+---
+
+```{r}
+library(readr)
+female_ownership <- read_csv("1.csv")
+library(gdata)
+```
+```{r}
+library(magrittr)
+library(magrittr)
+library(ggplot2)
+library(lubridate)
+library(tidyr)
+library(dplyr)
+```
+```{r}
+data <- female_ownership[-c(1,2,3,4),]
+colnames(data) <- c("Country Name", "Country Code", "Indicator Name", "Indicator Code", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019","2020")
+```
+```{r}
+result <-data %>%
+  pivot_longer(-c(`Country Name` , `Country Code`, `Indicator Name`, `Indicator Code`),
+               names_to = "Year",
+               values_to = "Count",
+               values_drop_na = T)
+```
+```{r}
+is.na(result)
+female_ownership<-na.omit(result)
+write.csv(female_ownership,"Firms with female participation in ownership (_ of firms).csv")
+```
+
+
+```{r}
+library(readr)
+female_manager <- read_csv("2.csv")
+library(gdata)
+```
+```{r}
+library(magrittr)
+library(magrittr)
+library(ggplot2)
+library(lubridate)
+library(tidyr)
+library(dplyr)
+```
+```{r}
+data <- female_manager[-c(1,2,3,4),]
+colnames(data) <- c("Country Name", "Country Code", "Indicator Name", "Indicator Code", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019","2020")
+```
+```{r}
+result <-data %>%
+  pivot_longer(-c(`Country Name` , `Country Code`, `Indicator Name`, `Indicator Code`),
+               names_to = "Year",
+               values_to = "Count",
+               values_drop_na = T)
+```
+```{r}
+is.na(result)
+female_manager<-na.omit(result)
+write.csv(female_manager,"Firms with female top manager (_ of firms).csv")
+```
+
+
+```{r}
+library(readr)
+labour_force <- read_csv("3.csv")
+library(gdata)
+```
+```{r}
+library(magrittr)
+library(magrittr)
+library(ggplot2)
+library(lubridate)
+library(tidyr)
+library(dplyr)
+```
+```{r}
+data <- labour_force[-c(1,2,3,4),]
+colnames(data) <- c("Country Name", "Country Code", "Indicator Name", "Indicator Code", "1990","1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998","1999","2000","2001","2002", "2003","2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019")
+```
+```{r}
+result <-data %>%
+  pivot_longer(-c(`Country Name` , `Country Code`, `Indicator Name`, `Indicator Code`),
+               names_to = "Year",
+               values_to = "Count",
+               values_drop_na = T)
+```
+```{r}
+is.na(result)
+labour_force<-na.omit(result)
+write.csv(labour_force,"Labor force participation rate, female (_ of female population ages 15-64) (modeled ILO estimate).csv")
+```
+
+
+```{r}
+library(readr)
+women_seat <- read_csv("4.csv")
+library(gdata)
+```
+```{r}
+library(magrittr)
+library(magrittr)
+library(ggplot2)
+library(lubridate)
+library(tidyr)
+library(dplyr)
+```
+```{r}
+data <- women_seat[-c(1,2,3,4),]
+colnames(data) <- c("Country Name", "Country Code", "Indicator Name", "Indicator Code","1997", "1998","1999","2000","2001","2002", "2003","2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020")
+```
+```{r}
+result <-data %>%
+  pivot_longer(-c(`Country Name` , `Country Code`, `Indicator Name`, `Indicator Code`),
+               names_to = "Year",
+               values_to = "Count",
+               values_drop_na = T)
+```
+```{r}
+is.na(result)
+women_seat<-na.omit(result)
+write.csv(women_seat,"Proportion of seats held by women in national parliaments (_).csv")
+```
+
+
+```{r}
+library(readr)
+female_male_ratio <- read_csv("5.csv")
+library(gdata)
+```
+```{r}
+library(magrittr)
+library(magrittr)
+library(ggplot2)
+library(lubridate)
+library(tidyr)
+library(dplyr)
+```
+```{r}
+data <- female_male_ratio[-c(1,2,3,4),]
+colnames(data) <- c("Country Name", "Country Code", "Indicator Name", "Indicator Code","1990","1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998","1999","2000","2001","2002", "2003","2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019")
+```
+```{r}
+result <-data %>%
+  pivot_longer(-c(`Country Name` , `Country Code`, `Indicator Name`, `Indicator Code`),
+               names_to = "Year",
+               values_to = "Count",
+               values_drop_na = T)
+```
+```{r}
+is.na(result)
+female_male_ratio<-na.omit(result)
+write.csv(female_male_ratio,"Ratio of female to male labor force participation rate (_) (modeled ILO estimate).csv")
+```
+
+
+```{r}
+library(readr)
+unemployment_female <- read_csv("6.csv")
+library(gdata)
+```
+```{r}
+library(magrittr)
+library(magrittr)
+library(ggplot2)
+library(lubridate)
+library(tidyr)
+library(dplyr)
+```
+```{r}
+data <- unemployment_female[-c(1,2,3,4),]
+colnames(data) <- c("Country Name", "Country Code", "Indicator Name", "Indicator Code","1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998","1999","2000","2001","2002", "2003","2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019")
+```
+```{r}
+result <-data %>%
+  pivot_longer(-c(`Country Name` , `Country Code`, `Indicator Name`, `Indicator Code`),
+               names_to = "Year",
+               values_to = "Count",
+               values_drop_na = T)
+```
+```{r}
+is.na(result)
+unemployment_female<-na.omit(result)
+write.csv(unemployment_female,"Unemployment, female (_ of female labor force) (modeled ILO estimate).csv")
+```
+
+
+```{r}
+library(readr)
+female_ownership <- read_csv("Firms with female participation in ownership (_ of firms).csv")
+female_manager<- read_csv("Firms with female top manager (_ of firms).csv")
+labour_force<- read_csv("Labor force participation rate, female (_ of female population ages 15-64) (modeled ILO estimate).csv")
+women_seat<- read_csv("Proportion of seats held by women in national parliaments (_).csv")
+female_male_ratio<- read_csv("Ratio of female to male labor force participation rate (_) (modeled ILO estimate).csv")
+unemployment_female<- read_csv("Unemployment, female (_ of female labor force) (modeled ILO estimate).csv")
+```
+```{r}
+#merging two dataframes
+Total <- rbind(female_ownership, female_manager, labour_force, women_seat, female_male_ratio, unemployment_female)
+write.csv(Total,"Social_Economic_indicators_for_women.csv")
+```

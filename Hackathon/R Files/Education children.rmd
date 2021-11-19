@@ -1,0 +1,108 @@
+---
+title: "Education Children"
+author: "Rochana Dudwadkar"
+date: "8/21/2021"
+output: html_document
+---
+```{r}
+library(readr)
+govexp_primary <- read_csv("1.csv")
+library(gdata)
+```
+```{r}
+library(magrittr)
+library(ggplot2)
+library(lubridate)
+library(tidyr)
+library(dplyr)
+```
+```{r}
+data <- govexp_primary[-c(1,2,3,4),]
+colnames(data) <- c("Country Name", "Country Code", "Indicator Name", "Indicator Code", "1998","1999","2000","2001","2002", "2003","2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019","2020")
+```
+```{r}
+result<-data %>%
+  pivot_longer(-c(`Country Name`, `Country Code`, `Indicator Name`, `Indicator Code`),
+               names_to = "Year",
+               values_to = "Count",
+               values_drop_na = T)
+
+is.na(data)
+govexp_primary<-na.omit(result)
+write.csv(govexp_primary,"1.csv")
+```
+
+
+```{r}
+library(readr)
+govexp_secondary <- read_csv("2.csv")
+library(gdata)
+```
+```{r}
+library(magrittr)
+library(ggplot2)
+library(lubridate)
+library(tidyr)
+library(dplyr)
+```
+```{r}
+data <- govexp_secondary[-c(1,2,3,4),]
+colnames(data) <- c("Country Name", "Country Code", "Indicator Name", "Indicator Code", "1998","1999","2000","2001","2002", "2003","2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018")
+```
+```{r}
+is.na(data)
+govexp_secondary<-na.omit(result)
+write.csv(govexp_secondary,"2.csv")
+```
+
+
+```{r}
+library(readr)
+primary_completion <- read_csv("3.csv")
+library(gdata)
+```
+```{r}
+library(magrittr)
+library(ggplot2)
+library(lubridate)
+library(tidyr)
+library(dplyr)
+```
+```{r}
+data <- primary_completion[-c(1,2,3,4),]
+colnames(data) <- c("Country Name", "Country Code", "Indicator Name", "Indicator Code", "1970", "1971", "1972","1973", "1974","1975","1976","1977","1978","1979","1980", "1981", "1982","1983", "1984","1985","1986","1987","1988","1989","1990","1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998","1999","2000","2001","2002", "2003","2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015")
+```
+```{r}
+is.na(data)
+primary_completion<-na.omit(result)
+write.csv(primary_completion,"3.csv")
+```
+
+
+```{r}
+library(readr)
+pupil_teacher <- read_csv("4.csv")
+library(gdata)
+```
+```{r}
+library(magrittr)
+library(ggplot2)
+library(lubridate)
+library(tidyr)
+library(dplyr)
+```
+```{r}
+data <- pupil_teacher[-c(1,2,3,4),]
+colnames(data) <- c("Country Name", "Country Code", "Indicator Name", "Indicator Code", "1970", "1971", "1972","1973", "1974","1975","1976","1977","1978","1979","1980", "1981", "1982","1983", "1984","1985","1986","1987","1988","1989","1990","1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998","1999","2000","2001","2002", "2003","2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020")
+```
+
+
+```{r}
+is.na(data)
+pupil_teacher<-na.omit(result)
+write.csv(pupil_teacher,"4.csv")
+```
+
+
+
+

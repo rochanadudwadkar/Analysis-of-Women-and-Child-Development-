@@ -1,0 +1,186 @@
+---
+title: "Women education"
+author: "Rochana Dudwadkar"
+date: "8/22/2021"
+output: html_document
+---
+
+```{r}
+library(readr)
+adolescents <- read_csv("1.csv")
+library(gdata)
+```
+```{r}
+library(magrittr)
+library(magrittr)
+library(ggplot2)
+library(lubridate)
+library(tidyr)
+library(dplyr)
+```
+```{r}
+data <- adolescents[-c(1,2,3,4),]
+colnames(data) <- c("Country Name", "Country Code", "Indicator Name", "Indicator Code", "1970", "1971", "1972","1973", "1974","1975","1976","1977","1978","1979", "1980", "1981", "1982","1983", "1984","1985","1986","1987","1988","1989","1990","1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998","1999","2000","2001","2002", "2003","2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020")
+```
+```{r}
+result <-data %>%
+  pivot_longer(-c(`Country Name` , `Country Code`, `Indicator Name`, `Indicator Code`),
+               names_to = "Year",
+               values_to = "Count",
+               values_drop_na = T)
+```
+```{r}
+is.na(result)
+adolescents<-na.omit(result)
+write.csv(adolescents,"Adolescents out of school, female (_ of female lower secondary school age).csv")
+```
+
+
+```{r}
+library(readr)
+labour_force <- read_csv("2.csv")
+library(gdata)
+```
+```{r}
+library(magrittr)
+library(magrittr)
+library(ggplot2)
+library(lubridate)
+library(tidyr)
+library(dplyr)
+```
+```{r}
+data <- labour_force[-c(1,2,3,4),-35]
+colnames(data) <- c("Country Name", "Country Code", "Indicator Name", "Indicator Code", "1990","1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998","1999","2000","2001","2002", "2003","2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019")
+```
+```{r}
+result <-data %>%
+  pivot_longer(-c(`Country Name` , `Country Code`, `Indicator Name`, `Indicator Code`),
+               names_to = "Year",
+               values_to = "Count",
+               values_drop_na = T)
+```
+```{r}
+is.na(result)
+labour_force<-na.omit(result)
+write.csv(labour_force,"Labor force participation rate, female (_ of female population ages 15-64) (modeled ILO estimate).csv")
+```
+
+
+```{r}
+library(readr)
+literacy_rate <- read_csv("3.csv")
+library(gdata)
+```
+```{r}
+library(magrittr)
+library(magrittr)
+library(ggplot2)
+library(lubridate)
+library(tidyr)
+library(dplyr)
+```
+```{r}
+data <- literacy_rate[-c(1,2,3,4),-50]
+colnames(data) <- c("Country Name", "Country Code", "Indicator Name", "Indicator Code", "1975","1976","1977","1978","1979", "1980", "1981", "1982","1983", "1984","1985","1986","1987","1988","1989", "1990","1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998","1999","2000","2001","2002", "2003","2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019")
+```
+```{r}
+result <-data %>%
+  pivot_longer(-c(`Country Name` , `Country Code`, `Indicator Name`, `Indicator Code`),
+               names_to = "Year",
+               values_to = "Count",
+               values_drop_na = T)
+```
+```{r}
+is.na(result)
+literacy_rate<-na.omit(result)
+write.csv(literacy_rate,"Literacy rate, adult female (_ of females ages 15 and above).csv")
+```
+
+
+```{r}
+library(readr)
+lower_sec <- read_csv("4.csv")
+library(gdata)
+```
+```{r}
+library(magrittr)
+library(magrittr)
+library(ggplot2)
+library(lubridate)
+library(tidyr)
+library(dplyr)
+```
+```{r}
+data <- lower_sec[-c(1,2,3,4),]
+colnames(data) <- c("Country Name", "Country Code", "Indicator Name", "Indicator Code","1970", "1971", "1972", "1973", "1974", "1975","1976","1977","1978","1979", "1980", "1981", "1982","1983", "1984","1985","1986","1987","1988","1989", "1990","1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998","1999","2000","2001","2002", "2003","2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020")
+```
+```{r}
+result <-data %>%
+  pivot_longer(-c(`Country Name` , `Country Code`, `Indicator Name`, `Indicator Code`),
+               names_to = "Year",
+               values_to = "Count",
+               values_drop_na = T)
+```
+```{r}
+is.na(result)
+lower_sec<-na.omit(result)
+write.csv(lower_sec,"Lower secondary completion rate, female (_ of relevant age group).csv")
+```
+
+
+```{r}
+library(readr)
+unemp_female <- read_csv("5.csv")
+library(gdata)
+```
+```{r}
+library(magrittr)
+library(magrittr)
+library(ggplot2)
+library(lubridate)
+library(tidyr)
+library(dplyr)
+```
+```{r}
+data <- unemp_female[-c(1,2,3,4),-34]
+colnames(data) <- c("Country Name", "Country Code", "Indicator Name", "Indicator Code","1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998","1999","2000","2001","2002", "2003","2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019")
+```
+```{r}
+result <-data %>%
+  pivot_longer(-c(`Country Name` , `Country Code`, `Indicator Name`, `Indicator Code`),
+               names_to = "Year",
+               values_to = "Count",
+               values_drop_na = T)
+```
+```{r}
+is.na(result)
+unemp_female<-na.omit(result)
+write.csv(unemp_female,"Unemployment, female (_ of female labor force) (modeled ILO estimate).csv")
+```
+
+
+```{r}
+library(readr)
+adolescents <- read_csv("Adolescents out of school, female (_ of female lower secondary school age).csv")
+labour_force <- read_csv("Labor force participation rate, female (_ of female population ages 15-64) (modeled ILO estimate).csv")
+literacy_rate <- read_csv("Literacy rate, adult female (_ of females ages 15 and above).csv")
+lower_sec <- read_csv("Lower secondary completion rate, female (_ of relevant age group).csv") 
+unemp_female <- read_csv("Unemployment, female (_ of female labor force) (modeled ILO estimate).csv")
+```
+```{r}
+#merging two dataframes
+Total <- rbind(adolescents, labour_force, literacy_rate, lower_sec, unemp_female)
+write.csv(Total,"Education_indicators_for_women.csv")
+```
+
+
+
+
+
+
+
+
+
+
+
